@@ -1,4 +1,4 @@
-https://github.com/RaniPatel16/c-repo.git
+
 #include<stdio.h>
 int main(){
     int n ;

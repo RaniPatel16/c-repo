@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query Backgrounds</title>
+    <style>
+       
+        body {
+            margin: 0;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+            font-size: 2 px;
+           
+         
+        }
+
+     
+        body {
+            background-color: yellow;
+        }
+        .text-content::after {
+            content: "Above 900px (24px)";
+        }
+
+        @media screen and (max-width: 900px) {
+            body {
+                background-color: green;
+                color: white; 
+                font-size:24px;
+            }
+            .text-content::after {
+                content: "600px to 900px (18px)";
+            }
+        }
+
+     
+        @media screen and (max-width: 599px) {
+            body {
+                background-color: red;
+                color: white;
+                font-size: 18px;
+            }
+            .text-content::after {
+                content: "Below 600px (14px)";
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text-content">please enter text: </div>
+
+</body>
+</html>

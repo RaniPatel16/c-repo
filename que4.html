@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Image with Session Storage</title>
+</head>
+<body>
+
+    <div id="showImg">
+        <img src="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80"
+             height="500" width="500">
+    </div>
+
+    <button id="toggleBtn">Click me!</button>
+
+    <script>
+
+        const imgContainer = document.getElementById('showImg');
+        const toggleButton = document.getElementById('toggleBtn');
+        const savedState = sessionStorage.getItem("imgVisible");
+
+        if (savedState === "hidden") {
+            imgContainer.style.display = "none";
+        } else {
+            imgContainer.style.display = "block";   
+        }
+
+        
+        function hideShow() {
+            if (imgContainer.style.display === "none") {
+                imgContainer.style.display = "block";
+                sessionStorage.setItem("imgVisible", "shown");
+            } else {
+                imgContainer.style.display = "none";
+                sessionStorage.setItem("imgVisible", "hidden");
+            }
+        }
+
+        toggleButton.addEventListener('click', hideShow);
+
+    </script>
+
+</body>
+</html>
